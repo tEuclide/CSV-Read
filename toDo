@@ -1,0 +1,16 @@
+refine search algorithm
+
+select search queries from webpage
+
+display results to webpage
+
+if one thing matches, see if others matches
+
+include index according to Excel file
+
+convert back to CSV
+
+remove duplicates
+
+highlight differences between duplicates if there
+s
