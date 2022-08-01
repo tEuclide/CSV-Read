@@ -2,11 +2,9 @@ console.log("testing");
 
 //test array
 //const revenueData = [];
-const completeMatches = [];
-const sameAccount = [];
-const sameName = [];
-const sameAdd1 = [];
-const sameAdd2 = [];
+const unfiltered = [];
+//use header[0] to get object in its own array
+const headSplit = [];
 
 const uploadConfirm = document.getElementById('uploadConfirm').
   addEventListener('click', () => {
@@ -17,7 +15,6 @@ const uploadConfirm = document.getElementById('uploadConfirm').
        complete: function(results){
          //log everything in array
          //console.log(results);
-
          //grab specific item out of array
          //console.log(results.data[0].revenue);
 
@@ -27,7 +24,18 @@ const uploadConfirm = document.getElementById('uploadConfirm').
          // }
          //console.log(revenueData);
 
+         //unfiltered.push(results.data);
 
+         for (i = 0; i < results.data.length; i++){
+          unfiltered.push(results.data[i]);
+         }
+
+         const header = [];
+         //push header into own seperate array
+          var sampleHead = header.push(results.data[0]);
+          headSplit.push(Object.getOwnPropertyNames(header[0]));
+
+         /*
          for (i = 0; i < results.data.length; i++){
            let num1 = results.data[i].id;
            for (b = 0; b < results.data.length; b++){
@@ -37,39 +45,6 @@ const uploadConfirm = document.getElementById('uploadConfirm').
              sameAccount.push(results.data[b]);}
            }
          }
-
-
-        //new stuff
-         for (i = 0; i < results.data.length; i++){
-           //change
-           let num1 = results.data[i].id;
-           for (b = 0; b < results.data.length; b++){
-             //change
-             let num2 = results.data[b].id;
-              if (num2 === num1 && i !== b){
-             sameAccount.push(results.data[b]);}
-           }
-         }
-
-         for (i = 0; i < results.data.length; i++){
-           let num1 = results.data[i].id;
-           for (b = 0; b < results.data.length; b++){
-             let num2 = results.data[b].id;
-              if (num2 === num1 && i !== b){
-             sameAccount.push(results.data[b]);}
-           }
-         }
-
-         for (i = 0; i < results.data.length; i++){
-           let num1 = results.data[i].id;
-           for (b = 0; b < results.data.length; b++){
-             let num2 = results.data[b].id;
-              if (num2 === num1 && i !== b){
-
-             sameAccount.push(results.data[b]);}
-           }
-         }
-
-       }
-       });
+         */
+       }});
   });

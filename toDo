@@ -13,4 +13,9 @@ convert back to CSV
 remove duplicates
 
 highlight differences between duplicates if there
-s
+
+better UI
+
+RegExp to filter from Account # and Regular Addresses
+
+get header off of file to select what searches to do
