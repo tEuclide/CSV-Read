@@ -51,6 +51,7 @@ const uploadConfirm = document.getElementById('uploadConfirm').
            }
          }
          */
+         alert("File has been uploaded");
 }});
   });
 
@@ -58,12 +59,13 @@ const uploadConfirm = document.getElementById('uploadConfirm').
 
 const selectHeaders = document.getElementById('loadHeads').
     addEventListener('click', () => {
-      console.log(onlyHead);
 
+      //displays headers to web page
       for (i = 0; i < onlyHead.length; i++){
         let para = document.createElement("p");
         let node = document.createTextNode(onlyHead[i]);
         para.appendChild(node);
+        para.setAttribute('id', onlyHead[i]);
 
         headSelect.appendChild(para);
       }
