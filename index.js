@@ -6,6 +6,10 @@ const unfiltered = [];
 //use header[0] to get object in its own array
 const headSplit = [];
 
+
+//gets empty div from html to import headers for selection
+const headSelect = document.getElementById("selectHead");
+
 const uploadConfirm = document.getElementById('uploadConfirm').
   addEventListener('click', () => {
     Papa.parse(document.getElementById('uploadFile').files[0],
@@ -35,6 +39,7 @@ const uploadConfirm = document.getElementById('uploadConfirm').
           var sampleHead = header.push(results.data[0]);
           headSplit.push(Object.getOwnPropertyNames(header[0]));
 
+          onlyHead = headSplit[0];
          /*
          for (i = 0; i < results.data.length; i++){
            let num1 = results.data[i].id;
@@ -46,5 +51,20 @@ const uploadConfirm = document.getElementById('uploadConfirm').
            }
          }
          */
-       }});
+}});
   });
+
+
+
+const selectHeaders = document.getElementById('loadHeads').
+    addEventListener('click', () => {
+      console.log(onlyHead);
+
+      for (i = 0; i < onlyHead.length; i++){
+        let para = document.createElement("p");
+        let node = document.createTextNode(onlyHead[i]);
+        para.appendChild(node);
+
+        headSelect.appendChild(para);
+      }
+});
