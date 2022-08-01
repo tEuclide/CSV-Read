@@ -29,9 +29,15 @@ const uploadConfirm = document.getElementById('uploadConfirm').
          //console.log(revenueData);
 
          //unfiltered.push(results.data);
+         var sameFileTest = [];
 
          for (i = 0; i < results.data.length; i++){
-          unfiltered.push(results.data[i]);
+          sameFileTest.push(results.data[i]);
+         }
+
+         //makes sure same file only gets uploaded once
+         if (unfiltered.length < 1){
+           unfiltered.push(sameFileTest);
          }
 
          const header = [];
