@@ -5,6 +5,8 @@ console.log("testing");
 const unfiltered = [];
 //use header[0] to get object in its own array
 const headSplit = [];
+const headerSelect = [];
+const duplicates = [];
 
 
 //gets empty div from html to import headers for selection
@@ -33,11 +35,14 @@ const uploadConfirm = document.getElementById('uploadConfirm').
 
          for (i = 0; i < results.data.length; i++){
           sameFileTest.push(results.data[i]);
+
          }
 
          //makes sure same file only gets uploaded once
-         if (unfiltered.length < 1){
-           unfiltered.push(sameFileTest);
+         if (unfiltered.length < results.data.length){
+          for (i = 0; i < results.data.length; i++){
+            unfiltered.push(sameFileTest[i]);
+          }
          }
 
          const header = [];
@@ -57,7 +62,7 @@ const uploadConfirm = document.getElementById('uploadConfirm').
            }
          }
          */
-         alert("File has been uploaded");
+         alert("File has been uploaded successfully");
 }});
   });
 
@@ -76,3 +81,23 @@ const selectHeaders = document.getElementById('loadHeads').
         headSelect.appendChild(para);
       }
 });
+
+function sorting(headName){
+
+  for (i = 0; i < unfiltered.data.length; i++){
+    if(unfiltered.data[i].headName === ''){
+      return;
+    }else{
+      for (b = 0; b < unfiltered.data.length; b++){
+        if(unfiltered.data[i].headName === unfiltered.data[b].headName){
+          duplicates.push(unfiltered.data[b]);
+        }
+      }
+    }
+  }
+}
+
+const sort = document.getElementById('sortNow').
+    addEventListener('click', () => {
+      alert("clicked");
+    });
