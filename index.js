@@ -97,7 +97,59 @@ function sorting(headName){
   }
 }
 
+/* WIP
+
 const sort = document.getElementById('sortNow').
     addEventListener('click', () => {
       alert("clicked");
     });
+
+
+    function levenshteinFilter(query, array) {
+      const results = [];
+      
+      // Loop through each item in the array
+      for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        const distance = levenshteinDistance(query, item);
+        
+        // If the distance is less than or equal to the length of the query divided by 2, add it to the results
+        if (distance <= Math.floor(query.length / 2)) {
+          results.push(item);
+        }
+      }
+      
+      return results;
+    }
+    
+    function levenshteinDistance(s, t) {
+      // Create a 2D matrix with s.length + 1 rows and t.length + 1 columns
+      const matrix = Array(s.length + 1).fill().map(() => Array(t.length + 1).fill(0));
+      
+      // Set the first row and column of the matrix
+      for (let i = 1; i <= s.length; i++) {
+        matrix[i][0] = i;
+      }
+      for (let j = 1; j <= t.length; j++) {
+        matrix[0][j] = j;
+      }
+      
+      // Loop through the matrix and fill in the values
+      for (let j = 1; j <= t.length; j++) {
+        for (let i = 1; i <= s.length; i++) {
+          if (s[i - 1] === t[j - 1]) {
+            matrix[i][j] = matrix[i - 1][j - 1];
+          } else {
+            matrix[i][j] = Math.min(
+              matrix[i - 1][j] + 1,
+              matrix[i][j - 1] + 1,
+              matrix[i - 1][j - 1] + 1
+            );
+          }
+        }
+      }
+      
+      // Return the bottom-right value of the matrix
+      return matrix[s.length][t.length];
+    }
+    */
