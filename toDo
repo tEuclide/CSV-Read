@@ -1,6 +1,11 @@
 refine search algorithm
 
+get exact duplicates removed from file before levenstein
+
 implement levenshtein filter into program
+
+use window.confirm to customise adding file field
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm
 
 create matrix for levenshtein solutions
 (one matrix per field)(ItemNumber squared)
@@ -25,7 +30,6 @@ highlight differences between duplicates if there
 better UI
 
 RegExp to filter from Account # and Regular Addresses
-
 
 Done
 get header off of file to select what searches to do
