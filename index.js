@@ -161,4 +161,3 @@ const sort = document.getElementById('sortNow').
       // Return the bottom-right value of the matrix
       return matrix[s.length][t.length];
     }
-
