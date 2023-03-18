@@ -162,5 +162,3 @@ const sort = document.getElementById('sortNow').
       return matrix[s.length][t.length];
     }
 
-
-//is this working
