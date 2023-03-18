@@ -1,5 +1,13 @@
 refine search algorithm
 
+implement levenshtein filter into program
+
+create matrix for levenshtein solutions
+(one matrix per field)(ItemNumber squared)
+
+refine matrix algorithm to speed up levenshtein
+(if one item checked through all others, we know all others for that item)
+
 select search queries from webpage
 
 display results to webpage
@@ -18,4 +26,6 @@ better UI
 
 RegExp to filter from Account # and Regular Addresses
 
+
+Done
 get header off of file to select what searches to do

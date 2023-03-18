@@ -8,10 +8,12 @@ const headSplit = [];
 const headerSelect = [];
 const duplicates = [];
 
-
 //gets empty div from html to import headers for selection
 const headSelect = document.getElementById("selectHead");
 
+
+//possibly use window.confirm for this step
+//window.confirm("Submit File");
 const uploadConfirm = document.getElementById('uploadConfirm').
   addEventListener('click', () => {
     Papa.parse(document.getElementById('uploadFile').files[0],
@@ -97,7 +99,7 @@ function sorting(headName){
   }
 }
 
-/* WIP
+/* WIP 
 
 const sort = document.getElementById('sortNow').
     addEventListener('click', () => {
@@ -105,6 +107,10 @@ const sort = document.getElementById('sortNow').
     });
 
 
+*/
+
+
+//is this part neccesary, or just create my own function to feed in from scratch
     function levenshteinFilter(query, array) {
       const results = [];
       
@@ -122,6 +128,9 @@ const sort = document.getElementById('sortNow').
       return results;
     }
     
+
+
+//must have this part in the program
     function levenshteinDistance(s, t) {
       // Create a 2D matrix with s.length + 1 rows and t.length + 1 columns
       const matrix = Array(s.length + 1).fill().map(() => Array(t.length + 1).fill(0));
@@ -152,4 +161,3 @@ const sort = document.getElementById('sortNow').
       // Return the bottom-right value of the matrix
       return matrix[s.length][t.length];
     }
-    */
