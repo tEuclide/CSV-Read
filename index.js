@@ -46,9 +46,6 @@ const uploadConfirm = document.getElementById('uploadConfirm').
 }});
   });
 
-
-
-
 //create empty div for items to get better spacing
 const selectHeaders = document.getElementById('loadHeads').
     addEventListener('click', () => {
