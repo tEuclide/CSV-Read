@@ -1,11 +1,12 @@
 refine search algorithm
 
+condense loadHeader, confirmFile, and exactDuplicate filter into one function
+	condense using window.confirm to customise adding file field
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm	
+
 get exact duplicates removed from file before levenstein
 
 implement levenshtein filter into program
-
-use window.confirm to customise adding file field
-https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm
 
 create matrix for levenshtein solutions
 (one matrix per field)(ItemNumber squared)
