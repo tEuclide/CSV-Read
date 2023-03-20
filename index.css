@@ -1,3 +1,4 @@
-#selectHead p{
-  
+#selectHead p::before{
+    content: "\a";
+    white-space: pre;
 }

@@ -48,17 +48,23 @@ const uploadConfirm = document.getElementById('uploadConfirm').
 
 
 
+
+//create empty div for items to get better spacing
 const selectHeaders = document.getElementById('loadHeads').
     addEventListener('click', () => {
 
       //displays headers to web page
       for (i = 0; i < onlyHead.length; i++){
-        let para = document.createElement("p");
+          let para = document.createElement("Input");
+          para.setAttribute("type", "checkbox");
+          let paraP = document.createElement("label");
+
         let node = document.createTextNode(onlyHead[i]);
-        para.appendChild(node);
+        paraP.appendChild(node);
         para.setAttribute('id', onlyHead[i]);
 
-        headSelect.appendChild(para);
+          headSelect.appendChild(para);
+          headSelect.appendChild(paraP);
       }
 });
 
