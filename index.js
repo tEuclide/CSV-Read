@@ -142,3 +142,13 @@ const sort = document.getElementById('sortNow').
       // Return the bottom-right value of the matrix
       return matrix[s.length][t.length];
     }
+
+
+    //using recursive timeout to keep checking if checkboxes have been checked
+
+    function checkBoxCheck() {
+      console.log("testing");
+      setTimeout(checkBoxCheck, 5000);
+    }
+
+    checkBoxCheck();
