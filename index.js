@@ -1,9 +1,6 @@
 console.log("testing");
 
-//test array
-//const revenueData = [];
 const unfiltered = [];
-//use header[0] to get object in its own array
 const headSplit = [];
 const headerSelect = [];
 const duplicates = [];
@@ -65,20 +62,6 @@ const selectHeaders = document.getElementById('loadHeads').
       }
 });
 
-function sorting(headName){
-
-  for (i = 0; i < unfiltered.data.length; i++){
-    if(unfiltered.data[i].headName === ''){
-      return;
-    }else{
-      for (b = 0; b < unfiltered.data.length; b++){
-        if(unfiltered.data[i].headName === unfiltered.data[b].headName){
-          duplicates.push(unfiltered.data[b]);
-        }
-      }
-    }
-  }
-}
 
 /* WIP 
 
@@ -147,7 +130,7 @@ const sort = document.getElementById('sortNow').
     //using recursive timeout to keep checking if checkboxes have been checked
 
     function checkBoxCheck() {
-      console.log("testing");
+      console.log(onlyHead);
       setTimeout(checkBoxCheck, 5000);
     }
 
