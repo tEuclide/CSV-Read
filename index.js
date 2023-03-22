@@ -4,6 +4,7 @@ const unfiltered = [];
 const headSplit = [];
 const headerSelect = [];
 const duplicates = [];
+const noExact = [];
 
 //gets empty div from html to import headers for selection
 const headSelect = document.getElementById("selectHead");
@@ -23,25 +24,54 @@ const uploadConfirm = document.getElementById('uploadConfirm').
          for (i = 0; i < results.data.length; i++){
           sameFileTest.push(results.data[i]);
 
-         }
+           }
+
+           const header = [];
+           //push header into own seperate array
+           var sampleHead = header.push(results.data[0]);
+           headSplit.push(Object.getOwnPropertyNames(header[0]));
+
+           onlyHead = headSplit[0];
+
+           alert("File has been uploaded successfully");
 
          //makes sure same file only gets uploaded once
          if (unfiltered.length < results.data.length){
           for (i = 0; i < results.data.length; i++){
             unfiltered.push(sameFileTest[i]);
           }
-         }
+           }
 
-         const header = [];
-         //push header into own seperate array
-          var sampleHead = header.push(results.data[0]);
-          headSplit.push(Object.getOwnPropertyNames(header[0]));
-
-          onlyHead = headSplit[0];
-          
-         alert("File has been uploaded successfully");
+         //calls different function to start removing exact duplicates before levenstein filter
+         removeExact();
 }});
   });
+
+
+
+//function to get rid of exact duplicates from file
+function removeExact() {
+    console.log("remove exact working");
+
+    for (i = 0; i < unfiltered.length; i++) {
+        var currentItem = unfiltered[i];
+        var noDupe = 0;
+
+        for (b = 0; b < noExact.length; b++) {
+            if (noExact[b] === currentItem) {
+                noDupe = 1;
+            }
+        }
+
+        if (noDupe === 1) {
+            return;
+        } else {
+            noExact.push(unfiltered[i]);
+        }
+    }
+};
+
+
 
 //create empty div for items to get better spacing
 const selectHeaders = document.getElementById('loadHeads').
@@ -128,10 +158,11 @@ const sort = document.getElementById('sortNow').
 
 
     //using recursive timeout to keep checking if checkboxes have been checked
-
+/*
     function checkBoxCheck() {
       console.log(onlyHead);
       setTimeout(checkBoxCheck, 5000);
     }
 
     checkBoxCheck();
+    */
