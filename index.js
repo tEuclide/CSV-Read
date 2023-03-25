@@ -54,18 +54,19 @@ function removeExact() {
     console.log("remove exact working");
 
     for (i = 0; i < unfiltered.length; i++) {
-        var currentItem = unfiltered[i];
-        var noDupe = 0;
+        var noDupe = false;
+        console.log(unfiltered[i]);
 
         for (b = 0; b < noExact.length; b++) {
-            if (noExact[b] === currentItem) {
-                noDupe = 1;
+
+            if (unfiltered[i] = noExact[b]) {
+                noDupe = true;
+                console.log("found a match");
             }
         }
 
-        if (noDupe === 1) {
-            return;
-        } else {
+        console.log(noDupe);
+        if (noDupe === false) {
             noExact.push(unfiltered[i]);
         }
     }
@@ -157,7 +158,7 @@ const sort = document.getElementById('sortNow').
     }
 
 
-    //using recursive timeout to keep checking if checkboxes have been checked
+    //using recuring timeout to keep checking if checkboxes have been checked
 /*
     function checkBoxCheck() {
       console.log(onlyHead);
